@@ -22,7 +22,7 @@ export function BlogLink({ title, date, href }) {
           </Link>
         </h2>
 
-        <time class="flex-shrink-0 whitespace-nowrap text-sm text-gray-500">
+        <time className="flex-shrink-0 whitespace-nowrap text-sm text-gray-500">
           <span>{date}</span>
         </time>
       </div>
