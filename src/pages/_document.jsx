@@ -1,4 +1,5 @@
 import { Head, Html, Main, NextScript } from 'next/document'
+import { Meta } from '@/components/Meta'
 
 const themeScript = `
   let mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
@@ -56,6 +57,7 @@ export default function Document() {
     <Html className="antialiased [font-feature-settings:'ss01']" lang="en">
       <Head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <Meta />
       </Head>
       <body className="bg-white dark:bg-slate-900">
         <Main />

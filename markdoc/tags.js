@@ -1,5 +1,6 @@
 import { Callout } from '@/components/Callout'
 import { QuickLink, QuickLinks } from '@/components/QuickLinks'
+import { BlogLink, BlogLinks } from '@/components/BlogLinks'
 
 const tags = {
   callout: {
@@ -39,6 +40,18 @@ const tags = {
       title: { type: String },
       description: { type: String },
       icon: { type: String },
+      href: { type: String },
+    },
+  },
+  'blog-links': {
+    render: BlogLinks,
+  },
+  'blog-link': {
+    selfClosing: true,
+    render: BlogLink,
+    attributes: {
+      title: { type: String },
+      date: { type: String },
       href: { type: String },
     },
   },

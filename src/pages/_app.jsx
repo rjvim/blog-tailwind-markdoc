@@ -20,6 +20,8 @@ function getNodeText(node) {
 function collectHeadings(nodes, slugify = slugifyWithCounter()) {
   let sections = []
 
+  // console.log('nodes', nodes)
+
   for (let node of nodes) {
     if (node.name === 'h2' || node.name === 'h3') {
       let title = getNodeText(node)
@@ -53,9 +55,11 @@ export default function App({ Component, pageProps }) {
 
   let pageTitle =
     pageProps.markdoc?.frontmatter.pageTitle ||
-    `${pageProps.markdoc?.frontmatter.title} - Docs`
+    `${pageProps.markdoc?.frontmatter.title} - Rajiv Seelam`
 
   let description = pageProps.markdoc?.frontmatter.description
+
+  // console.log('pageProps.markdoc.content', pageProps.markdoc.content)
 
   let tableOfContents = pageProps.markdoc?.content
     ? collectHeadings(pageProps.markdoc.content)

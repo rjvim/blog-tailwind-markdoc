@@ -36,3 +36,5 @@ To learn more about the technologies used in this site template, see the followi
 - [Headless UI](https://headlessui.dev) - the official Headless UI documentation
 - [Markdoc](https://markdoc.io) - the official Markdoc documentation
 - [DocSearch](https://docsearch.algolia.com) - the official DocSearch documentation
+
+<!-- I work at [@betalectic](https://twitter.com/betalectic). {% .lead %} -->

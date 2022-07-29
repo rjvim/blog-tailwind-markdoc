@@ -7,66 +7,69 @@ import { Hero } from '@/components/Hero'
 import { Logo, Logomark } from '@/components/Logo'
 import { MobileNavigation } from '@/components/MobileNavigation'
 import { Navigation } from '@/components/Navigation'
+import { ListOfBlogs } from '@/components/ListOfBlogs'
 import { Prose } from '@/components/Prose'
 import { Search } from '@/components/Search'
 import { ThemeSelector } from '@/components/ThemeSelector'
 
-const navigation = [
-  {
-    title: 'Introduction',
-    links: [
-      { title: 'Getting started', href: '/' },
-      { title: 'Installation', href: '/docs/installation' },
-    ],
-  },
-  {
-    title: 'Core concepts',
-    links: [
-      { title: 'Understanding caching', href: '/docs/understanding-caching' },
-      {
-        title: 'Predicting user behavior',
-        href: '/docs/predicting-user-behavior',
-      },
-      { title: 'Basics of time-travel', href: '/docs/basics-of-time-travel' },
-      {
-        title: 'Introduction to string theory',
-        href: '/docs/introduction-to-string-theory',
-      },
-      { title: 'The butterfly effect', href: '/docs/the-butterfly-effect' },
-    ],
-  },
-  {
-    title: 'Advanced guides',
-    links: [
-      { title: 'Writing plugins', href: '/docs/writing-plugins' },
-      { title: 'Neuralink integration', href: '/docs/neuralink-integration' },
-      { title: 'Temporal paradoxes', href: '/docs/temporal-paradoxes' },
-      { title: 'Testing', href: '/docs/testing' },
-      { title: 'Compile-time caching', href: '/docs/compile-time-caching' },
-      {
-        title: 'Predictive data generation',
-        href: '/docs/predictive-data-generation',
-      },
-    ],
-  },
-  {
-    title: 'API reference',
-    links: [
-      { title: 'CacheAdvance.predict()', href: '/docs/cacheadvance-predict' },
-      { title: 'CacheAdvance.flush()', href: '/docs/cacheadvance-flush' },
-      { title: 'CacheAdvance.revert()', href: '/docs/cacheadvance-revert' },
-      { title: 'CacheAdvance.regret()', href: '/docs/cacheadvance-regret' },
-    ],
-  },
-  {
-    title: 'Contributing',
-    links: [
-      { title: 'How to contribute', href: '/docs/how-to-contribute' },
-      { title: 'Architecture guide', href: '/docs/architecture-guide' },
-      { title: 'Design principles', href: '/docs/design-principles' },
-    ],
-  },
-]
+// const navigation = [
+//   {
+//     title: 'Introduction',
+//     links: [
+//       { title: 'Getting started', href: '/' },
+//       { title: 'Installation', href: '/docs/installation' },
+//     ],
+//   },
+//   {
+//     title: 'Core concepts',
+//     links: [
+//       { title: 'Understanding caching', href: '/docs/understanding-caching' },
+//       {
+//         title: 'Predicting user behavior',
+//         href: '/docs/predicting-user-behavior',
+//       },
+//       { title: 'Basics of time-travel', href: '/docs/basics-of-time-travel' },
+//       {
+//         title: 'Introduction to string theory',
+//         href: '/docs/introduction-to-string-theory',
+//       },
+//       { title: 'The butterfly effect', href: '/docs/the-butterfly-effect' },
+//     ],
+//   },
+//   {
+//     title: 'Advanced guides',
+//     links: [
+//       { title: 'Writing plugins', href: '/docs/writing-plugins' },
+//       { title: 'Neuralink integration', href: '/docs/neuralink-integration' },
+//       { title: 'Temporal paradoxes', href: '/docs/temporal-paradoxes' },
+//       { title: 'Testing', href: '/docs/testing' },
+//       { title: 'Compile-time caching', href: '/docs/compile-time-caching' },
+//       {
+//         title: 'Predictive data generation',
+//         href: '/docs/predictive-data-generation',
+//       },
+//     ],
+//   },
+//   {
+//     title: 'API reference',
+//     links: [
+//       { title: 'CacheAdvance.predict()', href: '/docs/cacheadvance-predict' },
+//       { title: 'CacheAdvance.flush()', href: '/docs/cacheadvance-flush' },
+//       { title: 'CacheAdvance.revert()', href: '/docs/cacheadvance-revert' },
+//       { title: 'CacheAdvance.regret()', href: '/docs/cacheadvance-regret' },
+//     ],
+//   },
+//   {
+//     title: 'Contributing',
+//     links: [
+//       { title: 'How to contribute', href: '/docs/how-to-contribute' },
+//       { title: 'Architecture guide', href: '/docs/architecture-guide' },
+//       { title: 'Design principles', href: '/docs/design-principles' },
+//     ],
+//   },
+// ]
+
+const navigation = []
 
 function GitHubIcon(props) {
   return (
@@ -93,7 +96,7 @@ function Header({ navigation }) {
   return (
     <header
       className={clsx(
-        'sticky top-0 z-50 flex flex-wrap items-center justify-between bg-white px-4 py-5 shadow-md shadow-slate-900/5 transition duration-500 dark:shadow-none sm:px-6 lg:px-8',
+        'sticky top-0 z-50 bg-white px-4 py-5 shadow-md shadow-slate-900/5 transition duration-500 dark:shadow-none sm:px-6 lg:px-8',
         isScrolled
           ? 'dark:bg-slate-900/95 dark:backdrop-blur dark:[@supports(backdrop-filter:blur(0))]:bg-slate-900/75'
           : 'dark:bg-transparent'
@@ -102,30 +105,30 @@ function Header({ navigation }) {
       {/* <div className="mr-6 flex lg:hidden">
         <MobileNavigation navigation={navigation} />
       </div> */}
-      <div className="relative flex flex-grow basis-0 items-center">
-        <Link href="/" aria-label="Home page">
-          <h1 className="text-xl font-bold tracking-tight text-black dark:text-white md:text-xl">
-            <span>Rajiv</span>, I am{' '}
-            <span className="text-gray-200">(rjv.im)</span>
-          </h1>
-          {/* <Logomark className="h-9 w-9 lg:hidden" />
+      <div className="mx-auto flex max-w-2xl flex-wrap items-center justify-between sm:px-2 lg:max-w-8xl lg:px-8 xl:px-28">
+        <div className="relative flex flex-grow basis-0 items-center">
+          <Link href="/" aria-label="Home page">
+            <h1 className="text-xl font-bold tracking-tight text-black dark:text-white md:text-xl">
+              <span>Rajiv</span>, I am{' '}
+              <span className="text-gray-200">(rjv.im)</span>
+            </h1>
+            {/* <Logomark className="h-9 w-9 lg:hidden" />
           <Logo className="hidden h-9 w-auto fill-slate-700 dark:fill-sky-100 lg:block" /> */}
-        </Link>
-      </div>
-      <div className="-my-5 mr-6 sm:mr-8 md:mr-0">
-        <Search />
-      </div>
-      <div className="relative flex basis-0 justify-end gap-6 sm:gap-8 md:flex-grow">
-        <ThemeSelector className="relative z-10" />
-        <Link href="https://github.com" className="group" aria-label="GitHub">
-          <GitHubIcon className="h-6 w-6 fill-slate-400 group-hover:fill-slate-500 dark:group-hover:fill-slate-300" />
-        </Link>
+          </Link>
+        </div>
+        <div className="-my-5 mr-6 sm:mr-8 md:mr-0">{/* <Search /> */}</div>
+        <div className="relative flex basis-0 justify-end gap-6 sm:gap-8 md:flex-grow">
+          <ThemeSelector className="relative z-10" />
+          {/* <Link href="https://github.com" className="group" aria-label="GitHub">
+            <GitHubIcon className="h-6 w-6 fill-slate-400 group-hover:fill-slate-500 dark:group-hover:fill-slate-300" />
+          </Link> */}
+        </div>
       </div>
     </header>
   )
 }
 
-function useTableOfContents(tableOfContents) {
+function useTableOfContents(tableOfContents, isHomePage) {
   let [currentSection, setCurrentSection] = useState(tableOfContents[0]?.id)
 
   let getHeadings = useCallback((tableOfContents) => {
@@ -144,6 +147,7 @@ function useTableOfContents(tableOfContents) {
   }, [])
 
   useEffect(() => {
+    if (isHomePage) return
     if (tableOfContents.length === 0) return
     let headings = getHeadings(tableOfContents)
     function onScroll() {
@@ -178,9 +182,12 @@ export function Layout({ children, title, tableOfContents }) {
   let section = navigation.find((section) =>
     section.links.find((link) => link.href === router.pathname)
   )
-  let currentSection = useTableOfContents(tableOfContents)
+  let currentSection = useTableOfContents(tableOfContents, isHomePage)
+
+  // console.log('tableOfContents', tableOfContents)
 
   function isActive(section) {
+    // return true
     if (section.id === currentSection) {
       return true
     }
@@ -190,11 +197,28 @@ export function Layout({ children, title, tableOfContents }) {
     return section.children.findIndex(isActive) > -1
   }
 
+  // const allPosts = getAllPosts([
+  //   'title',
+  //   'date',
+  //   'slug',
+  //   'author',
+  //   'coverImage',
+  //   'excerpt',
+  // ])
+
+  // console.log('allPosts', allPosts)
+
   return (
     <>
       <Header navigation={navigation} />
 
       {/* {isHomePage && <Hero />} */}
+
+      {/* {isHomePage && (
+        <div className="relative mx-auto flex max-w-8xl justify-center sm:px-2 lg:px-8 xl:px-12">
+          <ListOfBlogs navigation={navigation} className="w-full " />
+        </div>
+      )} */}
 
       <div className="relative mx-auto flex max-w-8xl justify-center sm:px-2 lg:px-8 xl:px-12">
         {/* <div className="hidden lg:relative lg:block lg:flex-none">
