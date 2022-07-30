@@ -4,10 +4,6 @@ pageTitle: Rajiv Seelam
 description: Thoughts and Solutions from my daily work
 ---
 
-I work at [@betalectic](https://twitter.com/betalectic) and [@teurons](https://twitter.com/teurons), I contribute to open source via [@reusejs](https://twitter.com/reusejs) and [@nobejs](https://twitter.com/nobejs)
-
-This is a blog to capture/share my thoughts and solutions from my daily work.
-
 ## Blogs
 
 {% blog-links %}
@@ -17,8 +13,6 @@ This is a blog to capture/share my thoughts and solutions from my daily work.
 {% blog-link title="Automating Planetscale Deploy Requests into CI/CD" icon="installation" href="/blog/automating-planetscale-deploy-requests-into-our-ci-cd" date="March 16, 2020" /%}
 
 {% /blog-links %}
-
----
 
 ## Contact
 
@@ -52,8 +46,6 @@ We have and are abstracting React and React Native Components. You can find all 
 **Backend Concerns**
 
 To make our work faster and better, we use a custom developed framework called NobeJS (Node + Beta). You can find all those at: [@nobejs](https://twitter.com/nobejs)
-
----
 
 ## Credits
 

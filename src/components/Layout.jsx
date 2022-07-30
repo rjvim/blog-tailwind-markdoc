@@ -107,11 +107,10 @@ function Header({ navigation }) {
       </div> */}
       <div className="relative mx-auto flex max-w-8xl flex-wrap items-center justify-between sm:px-2 lg:px-8 xl:px-12">
         <div className="mx-auto flex min-w-0 max-w-2xl flex-auto flex-wrap items-center justify-between px-4 py-5 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-24">
-          <div className="relative flex flex-grow basis-0 items-center ">
+          <div className="relative flex flex-grow basis-0 items-center">
             <Link href="/" aria-label="Home page">
-              <h1 className="text-xl font-bold tracking-tight text-black dark:text-white md:text-xl">
-                <span>Rajiv</span>, I am{' '}
-                <span className="text-gray-200">(rjv.im)</span>
+              <h1 className="bg-gradient-to-r from-cyan-400 to-cyan-600 bg-clip-text text-xl font-bold tracking-wide text-transparent dark:from-cyan-300 dark:to-cyan-500  md:text-xl">
+                rjv.im
               </h1>
               {/* <Logomark className="h-9 w-9 lg:hidden" />
           <Logo className="hidden h-9 w-auto fill-slate-700 dark:fill-sky-100 lg:block" /> */}
@@ -214,7 +213,7 @@ export function Layout({ children, title, tableOfContents }) {
     <>
       <Header navigation={navigation} />
 
-      {/* {isHomePage && <Hero />} */}
+      {isHomePage && <Hero />}
 
       {/* {isHomePage && (
         <div className="relative mx-auto flex max-w-8xl justify-center sm:px-2 lg:px-8 xl:px-12">
@@ -236,7 +235,7 @@ export function Layout({ children, title, tableOfContents }) {
         </div> */}
         <div className="min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-24">
           <article className=" ">
-            {(title || section) && (
+            {(title || section) && !isHomePage && (
               <header className="mb-9 space-y-1">
                 {section && (
                   <p className="font-display text-sm font-medium text-sky-500">
