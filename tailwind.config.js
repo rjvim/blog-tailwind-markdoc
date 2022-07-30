@@ -28,6 +28,10 @@ module.exports = {
       maxWidth: {
         '8xl': '88rem',
       },
+      transitionProperty: {
+        height: 'height',
+        spacing: 'margin, padding',
+      },
     },
   },
   plugins: [require('@tailwindcss/typography')],
