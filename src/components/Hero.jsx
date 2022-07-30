@@ -52,12 +52,12 @@ export function Hero() {
                 <div className="relative">
                   <p className="inline bg-gradient-to-r from-indigo-200 via-sky-400 to-indigo-200 bg-clip-text font-display text-5xl tracking-tight text-transparent">
                     Rajiv Seelam
-                    <button className="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+                    <button className="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-95">
                       <a
                         href="https://twitter.com/rjv_im"
                         target={'_blank'}
                         rel="noreferrer"
-                        className="ml-2 text-3xl text-cyan-500 hover:text-cyan-400"
+                        className="ml-2 text-3xl tracking-tight text-cyan-500 hover:text-cyan-400"
                       >
                         @rjv_im
                       </a>
