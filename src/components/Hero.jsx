@@ -51,17 +51,22 @@ export function Hero() {
                 />
                 <div className="relative">
                   <p className="inline bg-gradient-to-r from-indigo-200 via-sky-400 to-indigo-200 bg-clip-text font-display text-5xl tracking-tight text-transparent">
-                    Rajiv Seelam (
-                    <a href="https://twitter.com/rjvim" target={'_blank'}>
+                    Rajiv Seelam
+                    <a
+                      href="https://twitter.com/rjv_im"
+                      target={'_blank'}
+                      rel="noreferrer"
+                      className="ml-2 text-3xl text-cyan-500 hover:text-cyan-400"
+                    >
                       @rjv_im
                     </a>
-                    )
                   </p>
                   <p className="mt-8 text-2xl tracking-tight text-slate-400">
                     I work at{' '}
                     <a
                       href="https://twitter.com/betalectic"
                       target={'_blank'}
+                      rel="noreferrer"
                       className="text-cyan-500 hover:text-cyan-400"
                     >
                       @betalectic
@@ -70,6 +75,7 @@ export function Hero() {
                     <a
                       href="https://twitter.com/teurons"
                       target={'_blank'}
+                      rel="noreferrer"
                       className="text-cyan-500 hover:text-cyan-400"
                     >
                       @teurons
@@ -78,6 +84,7 @@ export function Hero() {
                     <a
                       href="https://twitter.com/reusejs"
                       target={'_blank'}
+                      rel="noreferrer"
                       className="text-cyan-500 hover:text-cyan-400"
                     >
                       @reusejs
@@ -86,6 +93,7 @@ export function Hero() {
                     <a
                       href="https://twitter.com/nobejs"
                       target={'_blank'}
+                      rel="noreferrer"
                       className="text-cyan-500 hover:text-cyan-400"
                     >
                       @nobejs
