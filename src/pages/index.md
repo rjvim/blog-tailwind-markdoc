@@ -1,7 +1,7 @@
 ---
 title: Rajiv Seelam
 pageTitle: Rajiv Seelam
-description: Thoughts and Solutions from my daily work
+description: A blog to capture/share thoughts/solutions from my daily work
 ---
 
 ## Blogs

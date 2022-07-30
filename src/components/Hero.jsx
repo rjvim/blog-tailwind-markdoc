@@ -92,8 +92,8 @@ export function Hero() {
                     </a>
                   </p>
                   <p className="mt-8 text-slate-400">
-                    This is a blog to capture/share my thoughts and solutions
-                    from my daily work.
+                    A blog to capture/share thoughts/solutions from my daily
+                    work.
                   </p>
                   <div className="mt-8 hidden gap-4 md:justify-center lg:justify-start">
                     <Button href="/">Get started</Button>
