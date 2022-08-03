@@ -14,7 +14,7 @@ description: A blog to capture/share thoughts/solutions from my daily work
 
 {% /blog-links %}
 
-## Contact
+## What We Do
 
 ### Application Building
 
