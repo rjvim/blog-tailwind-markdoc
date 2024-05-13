@@ -3,6 +3,8 @@ title: 'Introducing to Indexes on Databases (MySQL)'
 date: '2020-11-07T05:35:07.322Z'
 ---
 
+## About
+
 Whenever you run a query, you database engine will scan the table and find you results which match the query. Well, it can be drasically slow if there are good number of rows (even 10,000 rows).
 
 It's important to understand "indexing" and it helps if it's part of you daily development, saves you lot of headache.
