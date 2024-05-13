@@ -5,23 +5,23 @@ date: '2020-06-03T05:35:07.322Z'
 
 ## About
 
-Developers regularly use Git, but also run into the general use-case of how to maintain versioning of their codebase & how to deploy. You might have come across: Feature Branch Workflow which is what the flow I am going to take about is based on - the feature branch workflow didn't solve my problem entirely - so, I am writing it down again for reference. This is not just for teams, but also solo devs.
+Developers regularly use Git, but also run into the general use-case of how to maintain versioning of their codebase and how to deploy. You might have come across the Feature Branch Workflow, which is what the flow I am going to talk about is based on. However, the feature branch workflow didn't entirely solve my problem, so I am writing it down again for reference. This is not just for teams, but also solo developers.
 
 ## Versioning
 
-The typical way to version software is using x.y.z (SemVer) we will continue using the same. But "version" is too broad a word to oversimplify it. We are here strictly refering to codebase version? When we publish a mobile app to android or iOS it insists for a version - are we discussing that version? We will discuss both - else the problem is not solved much.
+The typical way to version software is using x.y.z (SemVer), and we will continue using the same. But "version" is too broad a word to oversimplify. Are we strictly referring to codebase version? When we publish a mobile app to Android or iOS, it insists on a version - are we discussing that version? We will discuss both - otherwise, the problem is not solved much.
 
-The core problem is actually created by Git itself, the way it works is, you change any file, you need to make a commit. Once you commit, the code has moved ahead. Git gives a way to tag codebase with a version - and because of that we end-up with various scenarios which we didn't predict.
+The core problem is actually created by Git itself. The way it works is, you change any file, you need to make a commit. Once you commit, the code has moved ahead. Git gives a way to tag the codebase with a version - and because of that, we end up with various scenarios which we didn't predict.
 
-You might have run your software development without even using versions - and it does have it's effect. You just are not able to talk in terms of releases anymore! You need some convention to talk about a release. When what you actually release is a codebase, why not use the same SemVer! We will do the same.
+You might have run your software development without even using versions - and it does have its effect. You just are not able to talk in terms of releases anymore! You need some convention to talk about a release. When what you actually release is a codebase, why not use the same SemVer! We will do the same.
 
 ## Concepts
 
-I want to guide this process with an example to make much more efficient.
+I want to guide this process with an example to make it much more efficient.
 
 ### Concept 1
 
-Once you created a git repo you are usually blessed with a `main` branch. Fixate that you will never push code directly to `main` and also never take a branch from it and work on it.
+Once you create a Git repo, you are usually blessed with a `main` branch. Fixate that you will never push code directly to `main` and also never take a branch from it and work on it.
 
 ### Concept 2
 
@@ -29,12 +29,12 @@ You need to take a `develop` branch from `main`, and this is the branch where yo
 
 There are two types of branches you should use:
 
-- `feature` branch: This is where you develop a feature, big/small, it has impact on the product
-- `hotfix` branch: This is where you fix bugs, or do some tweaking
+- `feature` branch: This is where you develop a feature, big or small, it has an impact on the product.
+- `hotfix` branch: This is where you fix bugs or do some tweaking.
 
 ## Developing a Feature(s)
 
-Let's assume your current software version is 1.2.0, and now you want to make a release: 1.3.0. What are going to release in 1.3.0? Few features! It's not essential that you develop a single feature in every release. Now as that confusion is out of way, your team has a great way to align, what is the team working on? "Release 1.3.0" - What goes into it? A,B,C,D!
+Let's assume your current software version is 1.2.0, and now you want to make a release: 1.3.0. What are you going to release in 1.3.0? A few features! It's not essential that you develop a single feature in every release. Now, as that confusion is out of the way, your team has a great way to align: what is the team working on? "Release 1.3.0" - What goes into it? A, B, C, D!
 
 ### Step 1: Make a feature branch
 
@@ -47,9 +47,9 @@ git checkout -b feature/change-signup-page develop
 
 ### Step 2: Merge feature branch to develop
 
-What? Merge? Obviously you have done whatever development you need to for the feature, and now you are ready to merge. There's no point of putting "Step 2: Code the feature"
+What? Merge? Obviously, you have done whatever development you need to for the feature, and now you are ready to merge. There's no point in putting "Step 2: Code the feature."
 
-Usually to merge you would be raising a PR and going through the entire code reviewing process with +2 upvotes minimum, but generally you will endup merging feature branch to develop branch.
+Usually, to merge, you would be raising a PR and going through the entire code reviewing process with +2 upvotes minimum, but generally you will end up merging the feature branch to the develop branch.
 
 ```bash
 git checkout develop
@@ -58,14 +58,14 @@ git merge feature/change-signup-page
 
 ### Step 3: Create a Release Branch & Version it
 
-There is no one to say you can't create this branch before you develop a feature or developing all features, but this is subjective - If it's an improvement or not is your subjective call. In the end, there is a release branch!
+There is no one to say you can't create this branch before you develop a feature or developing all features, but this is subjective - if it's an improvement or not is your subjective call. In the end, there is a release branch!
 
 ```bash
-// Create a release branch from develop branch
+// Create a release branch from the develop branch
 git checkout -b release/1.3.0 develop
 ```
 
-Now, I always had my doubts when do I actually increment version in package.json or pom.xml file? It happens now! Once you create a release, you are basically "preparing" (not completing) the code for release, and you are clearly marking it with version you intend to release. In package.json put 1.3.0 (You can just run some command too!)
+Now, I always had my doubts: when do I actually increment the version in the package.json or pom.xml file? It happens now! Once you create a release, you are basically "preparing" (not completing) the code for release, and you are clearly marking it with the version you intend to release. In package.json, put 1.3.0 (You can just run some command too!)
 
 ```
 // Increment in package.json
@@ -74,42 +74,42 @@ Now, I always had my doubts when do I actually increment version in package.json
 
 ### Step 4: Stabilize Release Branch
 
-Depending on approach you took, you might have created release after all features or some features. Eventually note that somehow all the code relevant for release reached the branch, now all you can do is:
+Depending on the approach you took, you might have created the release after all features or some features. Eventually, note that somehow all the code relevant for release reached the branch, now all you can do is:
 
 - Make any last-minute bug fixes in the release branch.
 - Update documentation, run tests, and finalize the release.
 
-You might merge things back to release branch using other release stabilization branches, this is not very important to whole structure, you can just call them `stabilize-move-button-to-left`, or if you are a single developer you might directly push to release. All is cool!
+You might merge things back to the release branch using other release stabilization branches; this is not very important to the whole structure, you can just call them `stabilize-move-button-to-left`, or if you are a single developer, you might directly push to the release. All is cool!
 
 ### Step 5: Release!
 
-This is where I got confused previously, but I got it much later. Release is basically releasing the code and not an environment. Let's come to releasing for testing, and releasing to environment little later - and in fact it is a different topic.
+This is where I got confused previously, but I got it much later. Release is basically releasing the code and not an environment. Let's come to releasing for testing, and releasing to the environment a little later - and in fact, it is a different topic.
 
 ```bash
 git checkout main
 git merge release/1.3.0
 ```
 
-You merged release branch to main, and that's awesome! But right now Git itself is not tagged with 1.3.0 version, 1.3.0 is only in package.json and that's not enough. That's why I called it "preparing", now let's complete it.
+You merged the release branch to main, and that's awesome! But right now, Git itself is not tagged with 1.3.0 version, 1.3.0 is only in package.json and that's not enough. That's why I called it "preparing," now let's complete it.
 
 ```bash
 git tag -a v1.3.0 -m "Release version 1.3.0"
 ```
 
-All you did is tagged Git commit with a tag number, and still you called it a "release". This is code release.
+All you did is tagged Git commit with a tag number, and still you called it a "release." This is code release.
 
-To close the loop, merge the changes from release back to develop, so that any stabilization done in release branch comes back to develop branch.
+To close the loop, merge the changes from the release back to develop, so that any stabilization done in the release branch comes back to the develop branch.
 
 ```bash
 git checkout develop
 git merge release/1.3.0
 ```
 
-That's done. You have developed a feature, and released it to main. Now, what about deployment? Let's come to it after hotfixes!
+That's done. You have developed a feature and released it to main. Now, what about deployment? Let's come to it after hotfixes!
 
 ## Developing a Hotfix
 
-You found a bug - where did it happen? It might be UAT or Production - That's the reason this topic was kept out. Because, the step where we mentioned "stabilize the release" - if we keep finding bugs, we will keep merging code to release branch just with PRs, we won't increment it everytime.
+You found a bug - where did it happen? It might be in UAT or Production - That's the reason this topic was kept out. Because, the step where we mentioned "stabilize the release" - if we keep finding bugs, we will keep merging code to the release branch just with PRs, we won't increment it every time.
 
 ### Step 1: Create a hotfix branch
 
@@ -121,16 +121,16 @@ git checkout -b hotfix/1.3.1 main
 
 ### Step 2: Bump the version
 
-Fix the bug, bump the version to `1.3.1` in package.json file
+Fix the bug, bump the version to `1.3.1` in the package.json file.
 
 ### Step 3: Merge to main and Tag
 
-- Merge the hotfix branch into both `main` and `develop`
+- Merge the hotfix branch into both `main` and `develop`.
 - Tag `main` with `v1.3.1`.
 
 ### Step 4: Push tags to main
 
-Push all the branches and tags to the remote repository
+Push all the branches and tags to the remote repository.
 
 ```bash
 git push origin main develop
@@ -139,65 +139,66 @@ git push --tags
 
 ## Deployment
 
-Deployment is your team/project/organization specific. If you are solo developer, doing your own personal project, you might not have a staging environment. If you are an big org you might have dev -> staging -> pre-prod -> prod. Number of environments has nothing to do with your codebase versioning.
+Deployment is as unique as your team, project, or organization. If you're a solo developer working on your own personal project, you might not bother with a staging environment. However, if you're part of a larger organization, you might have a sophisticated setup like dev -> staging -> pre-prod -> prod. But remember, the number of environments doesn't dictate how you manage your codebase versioning.
 
 ### Environments
 
-When you want to deploy, there are two questions:
+When it's time to deploy, you've got two big questions:
 
-- What do you want to deploy?
-- Where do you want to deploy?
+- What's getting deployed?
+- Where's it going?
 
-_Where_ is your environment, your environment would have it's own environment variables. _what_ is to simplify which "git commit" you want to deploy at the end of the day! As that's not flexible, you use branch names, or tags.
+The "where" refers to your environment, each with its own set of variables. The "what" is about simplifying which "git commit" you want to deploy at the end of the day! Since that's not very flexible, you often resort to using branch names or tags.
 
-Let's take an example to drive the point home. You have the following environments:
+Let's paint a picture with an example. Say you've got these environments:
 
-- **staging** (Maybe QA tests here)
-- **pre-prod** (Maybe Final QA happens here)
-- **prod** (You should know better)
+- **staging** (Maybe where QA tests happen)
+- **pre-prod** (Maybe where the final QA happens)
+- **prod** (Well, you should know better!)
 
-Once you made a release branch, you want to make it available for testing, what you can do is:
+Once you've got a release branch ready, you'd want to make it available for testing. Here's how you could do it:
 
-- Connect automated CI/CD to deploy `release/1.3.0` to staging everytime you push
-- Once you are happy with release branch, then make the release to main. At this point main has a tag called v1.3.0
-- Release v1.3.0 tag to pre-prod environment
-- Oops, you found a bug. So you make a `hotfix/1.3.1` branch!
-- Merge `hotfix/1.3.1` to main and tag v1.3.1
-- Release v1.3.1 tag to pre-prod environment
+- Hook up automated CI/CD to deploy `release/1.3.0` to staging every time you push.
+- Once you're satisfied with the release branch, then promote the release to main. At this point, main has a tag called v1.3.0.
+- Release the v1.3.0 tag to the pre-prod environment.
+- Oops, stumbled upon a bug. Time for a `hotfix/1.3.1` branch!
+- Merge `hotfix/1.3.1` to main and tag it as v1.3.1.
+- Release the v1.3.1 tag to the pre-prod environment.
 
 ### Alternatives
 
-- You might want to connect `main` to pre-prod directly if it helps
-- If you have multiple releases in plan
-  - You might have a new "release environment" (else why do you need CaaS!)
-  - Create release environment, destroy after release
-- Call it "release" environment instead of "staging", so that you can deploy upcoming release to it
-- Some might also call it preview environments, where each release branch has a deployment for itself
+- Maybe you'd like to connect `main` directly to pre-prod if that makes things smoother.
+- If you've got multiple releases lined up:
+  - You might consider setting up a new "release environment" (else why would you need CaaS!)
+  - Create the release environment and tear it down after the release.
+- Call it a "release" environment instead of "staging", so you can deploy the upcoming release to it.
+- Some folks even call it preview environments, where each release branch has a deployment of its own.
 
 ### Mobile Apps Versioning
 
-Android and iOS Versioning has it's own versioning, everytime you need to upload to these stores you need to increment version in few files which are specific to Android and iOS. But, issue is when we touch these files, they change git history essentially moving the main branch.
+Android and iOS versioning have their own quirks. Every time you need to upload to these stores, you've got to increment versions in a few files specific to Android and iOS. But the issue is, when we touch these files, they mess with Git history, essentially nudging the main branch.
 
-For such things, simply do following:
+For such cases, keep it simple:
 
-- Follow the same process of hotfix, call it `storefix/1.3.2`
+- Stick to the same process as hotfixes, just call it `storefix/1.3.2`.
 
 ## Summary
 
-Let's take several steps back and understanding/validate why does this process even work
+> _Time to use some Generative AI to add some wit_
 
-- The code which reached users has always been a tagged commit in `main` branch
-- In your team/org, you all align that you are working on a release, and it has a version: 1.3.0
-- Your language is centered around it too, like:
-  - Hey, is 1.3.0 in staging?
-  - Is QA done for 1.3.0?
-  - What the hell is going on with 1.3.0
-  - While we are working on 1.3.0, can we plan 1.4.0!
-- `develop` is always key up-to-date by merging main & release branches to it
-- The `develop` branch is used for ongoing work
-- `feature` branches for new features
-- `release` branches for preparing releases
-- `hotfix` branches for urgent fixes.
-- Each significant release is tagged in Git, providing clear reference points for each version of your software.
-- You can actually use some tool which reads version from `package.json` and display on your app like `Software Version: 1.3.1`
-- Your bug tracking tools or analytics tools can put this version and helps you find issues/bugs
+Let's ponder why this process actually works:
+
+- The code that finds its way to users is like a VIP, chilling in a tagged commit on the `main` branch.
+- In your team/org, you all gather around and chant, "We're working on 1.3.0, folks!"
+- Your lingo is all about it:
+  - "Is 1.3.0 sunbathing in staging?"
+  - "Did QA give 1.3.0 the nod?"
+  - "What's the scoop with 1.3.0?"
+  - "Hey, while we're jazzed about 1.3.0, can we sneak in plans for 1.4.0?"
+- `develop` is the lively hub where main and release branches dance together.
+- `feature` branches are the birthplaces of new wonders.
+- `release` branches are where the magic happens before the grand unveiling.
+- `hotfix` branches are the emergency exits when things go haywire.
+- Every significant release gets its own red carpet moment with a fancy Git tag.
+- Fancy tools read your version from `package.json` and proudly display it like "Software Version: 1.3.1."
+- Your bug trackers and analytics tools high-five the version, making issue hunting a piece of cake.
