@@ -47,7 +47,7 @@ git checkout -b feature/change-signup-page develop
 
 ### Step 2: Merge feature branch to develop
 
-What? Merge? Obviously, you have done whatever development you need to for the feature, and now you are ready to merge. There's no point in putting "Step 2: Code the feature."
+What? Merge? Obviously, you have done whatever development you need to for the feature, and now you are ready to merge.
 
 Usually, to merge, you would be raising a PR and going through the entire code reviewing process with +2 upvotes minimum, but generally you will end up merging the feature branch to the develop branch.
 
@@ -58,7 +58,7 @@ git merge feature/change-signup-page
 
 ### Step 3: Create a Release Branch & Version it
 
-There is no one to say you can't create this branch before you develop a feature or developing all features, but this is subjective - if it's an improvement or not is your subjective call. In the end, there is a release branch!
+Creating a release branch before developing all features or even before starting any development is entirely feasible. However, whether it's a good idea or not depends on your specific circumstances and preferences. Irrespective of when you create release branch, you need to either merge develop branch whenever it's updated, or make PRs directly to release branch.
 
 ```bash
 // Create a release branch from the develop branch
