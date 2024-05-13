@@ -32,6 +32,10 @@ There are two types of branches you should use:
 - `feature` branch: This is where you develop a feature, big or small, it has an impact on the product.
 - `hotfix` branch: This is where you fix bugs or do some tweaking.
 
+### Concept 3
+
+When you deploy code to customers, you and your customer both should be able to determine easily which version of code/software they are using. This customer might be external, internal like QA.
+
 ## Developing a Feature(s)
 
 Let's assume your current software version is 1.2.0, and now you want to make a release: 1.3.0. What are you going to release in 1.3.0? A few features! It's not essential that you develop a single feature in every release. Now, as that confusion is out of the way, your team has a great way to align: what is the team working on? "Release 1.3.0" - What goes into it? A, B, C, D!
