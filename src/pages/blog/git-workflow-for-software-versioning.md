@@ -109,7 +109,7 @@ That's done. You have developed a feature and released it to main. Now, what abo
 
 ## Developing a Hotfix
 
-You found a bug - where did it happen? It might be in UAT or Production - That's the reason this topic was kept out. Because, the step where we mentioned "stabilize the release" - if we keep finding bugs, we will keep merging code to the release branch just with PRs, we won't increment it every time.
+You found a bug - where did it happen? It might be in UAT or Production - That's the reason this topic was kept out. Because, the step where we mentioned "stabilize the release" - if we keep finding bugs, we will keep merging code to the release branch just with PRs, we won't increment version every time.
 
 ### Step 1: Create a hotfix branch
 
