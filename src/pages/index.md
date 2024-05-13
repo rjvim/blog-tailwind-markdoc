@@ -22,10 +22,12 @@ We run a app development agency called Betalectic (Building Beta Version of your
 
 If you need help in building any of following you can contact us at [@betalectic](https://twitter.com/betalectic):
 
-- Websites
+- Thinking outside box to solve problems and turning it into a business (Zero to One)
+- Architecting and solving domain problems
 - Web Applications like User/Admin Dashboards
 - Mobile Applications using React Native
 - Scalable Backend APIs and Solutions using NodeJS
+- Websites
 
 ## Credits
 
