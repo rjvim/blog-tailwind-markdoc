@@ -21,7 +21,7 @@ I want to guide this process with an example to make it much more efficient.
 
 ### Concept 1
 
-Once you create a Git repo, you are usually blessed with a `main` branch. Fixate that you will never push code directly to `main` and also never take a branch from it and work on it.
+Once you create a Git repo, you are usually blessed with a `main` branch. Fixate that you will never push code directly to `main`
 
 ### Concept 2
 
